@@ -1,5 +1,6 @@
 package com.efrei.service;
 
+import com.efrei.model.Actor;
 import com.efrei.model.Movie;
 import com.efrei.model.MovieType;
 import com.efrei.repository.MovieRepository;
@@ -8,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.PostConstruct;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.Arrays;
@@ -21,6 +23,8 @@ public class MoviesService {
 
     @Autowired
     private MovieRepository movieRepository;
+    @Autowired
+    private ActorService actorService;
 
     @GetMapping
     public ResponseEntity findAll() {
@@ -29,6 +33,8 @@ public class MoviesService {
         if (movies.isEmpty()) {
             return ResponseEntity.notFound().build();
         } else {
+            movies.forEach(this::populateMovieWithActors);
+
             return ResponseEntity.ok(movies);
         }
     }
@@ -65,7 +71,13 @@ public class MoviesService {
         return ResponseEntity.noContent().build();
     }
 
-    @GetMapping("/init")
+    private void populateMovieWithActors(Movie movie) {
+        List<Actor> movieActors = actorService.getMovieActors(movie.getTitle());
+
+        movieActors.forEach(movie::addActor);
+    }
+
+    @PostConstruct
     public void initDatabase() {
         Movie interstellar = Movie.builder()
                 .director("Christopher Nolan")

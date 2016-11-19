@@ -14,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.Transient;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -38,5 +39,12 @@ public class Movie implements Serializable {
 
     @Transient
     private List<Actor> actors;
+
+    public void addActor(Actor actor) {
+        if (this.actors == null) {
+            this.actors = new ArrayList<>();
+        }
+        this.actors.add(actor);
+    }
 
 }
