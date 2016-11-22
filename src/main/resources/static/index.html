@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Amazing website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body>
+
+<div id="app">
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Better VOD</a>
+                <p class="navbar-text">See our amazing content !</p>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Available Movies</h2>
+                <ul class="list-group">
+                    <li class="list-group-item" v-for="movie in movies">
+                        <span class="badge">{{ movie.type }}</span>
+                        <p>Title : {{ movie.title }}</p>
+                        <p>Director : {{ movie.director }}</p>
+                        <p>Release date : {{ movie.releaseDate }}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
