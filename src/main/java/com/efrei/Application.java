@@ -10,7 +10,7 @@ import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@EnableEurekaClient
+//@EnableEurekaClient
 @EnableCircuitBreaker
 @EntityScan(basePackageClasses = { Application.class, Jsr310JpaConverters.class })
 @EnableJpaRepositories(basePackageClasses = MovieRepository.class)
