@@ -4,9 +4,8 @@ import com.efrei.model.Actor;
 import com.efrei.model.Movie;
 import com.efrei.model.MovieType;
 import com.efrei.repository.MovieRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
@@ -16,15 +15,13 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-@Service
 @RestController
 @RequestMapping("/movies")
+@RequiredArgsConstructor
 public class MoviesService {
 
-    @Autowired
-    private MovieRepository movieRepository;
-    @Autowired
-    private ActorService actorService;
+    private final MovieRepository movieRepository;
+    private final ActorService actorService;
 
     @GetMapping
     public ResponseEntity findAll() {

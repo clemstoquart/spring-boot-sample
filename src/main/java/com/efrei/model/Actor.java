@@ -17,6 +17,6 @@ public class Actor implements Serializable {
     private String name;
     private String firstName;
 
-    private LocalDate birtDate;
+    private LocalDate birthDate;
 
 }
