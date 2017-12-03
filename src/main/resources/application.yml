@@ -7,10 +7,11 @@ spring:
   h2:
     console:
       enabled: true
-  jackson:
-    serialization:
-      WRITE_DATES_AS_TIMESTAMPS: false
 
 management:
-  security:
-    enabled: false
+  endpoint:
+    health:
+      show-details: true
+  endpoints:
+    web:
+      expose: '*'
