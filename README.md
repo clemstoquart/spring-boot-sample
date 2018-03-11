@@ -1,6 +1,8 @@
 # spring-boot-sample
 
-Simple Spring Boot 1.5 app designed for training purpose.
+[![Build Status](https://travis-ci.org/clemstoquart/spring-boot-sample.svg?branch=master)](https://travis-ci.org/clemstoquart/spring-boot-sample)
+
+Simple Spring Boot 2.0 app designed for training purpose.
 
 ## Presentation
 
@@ -10,7 +12,7 @@ Open the `index.html` file in your favorite browser to watch it.
 
 ## Tools required
 
-You need a JDK 8 to build and run this app.
+You need a JDK 9 to build and run this app.
 
 ## Build
 ```
