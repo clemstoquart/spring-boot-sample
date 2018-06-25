@@ -1,8 +1,6 @@
-import java.net.URI
-
 plugins {
     id("java")
-    id("org.springframework.boot") version "2.0.1.RELEASE"
+    id("org.springframework.boot") version "2.0.3.RELEASE"
     id("io.spring.dependency-management") version "1.0.5.RELEASE"
 }
 
@@ -15,7 +13,6 @@ java {
 
 repositories {
     mavenCentral()
-    maven { url = URI.create("https://repo.spring.io/milestone") }
 }
 
 dependencies {
@@ -38,6 +35,6 @@ dependencies {
 
 dependencyManagement {
     imports {
-        mavenBom("org.springframework.cloud:spring-cloud-dependencies:Finchley.M9")
+        mavenBom("org.springframework.cloud:spring-cloud-dependencies:RELEASE")
     }
 }
