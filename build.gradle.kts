@@ -35,6 +35,6 @@ dependencies {
 
 dependencyManagement {
     imports {
-        mavenBom("org.springframework.cloud:spring-cloud-dependencies:RELEASE")
+        mavenBom("org.springframework.cloud:spring-cloud-dependencies:Finchley.RELEASE")
     }
 }
