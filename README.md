@@ -12,7 +12,7 @@ Open the `index.html` file in your favorite browser to watch it.
 
 ## Tools required
 
-You need a JDK 9 to build and run this app.
+You need a JDK 10 to build and run this app.
 
 ## Build
 ```

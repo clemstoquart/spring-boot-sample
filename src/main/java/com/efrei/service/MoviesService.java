@@ -12,9 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.PostConstruct;
 import java.time.LocalDate;
 import java.time.Month;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/movies")
@@ -26,7 +24,7 @@ public class MoviesService {
 
     @GetMapping
     public ResponseEntity findAll() {
-        List<Movie> movies = movieRepository.findAll();
+        var movies = movieRepository.findAll();
 
         if (movies.isEmpty()) {
             return ResponseEntity.notFound().build();
@@ -39,7 +37,7 @@ public class MoviesService {
 
     @GetMapping("/{id}")
     public ResponseEntity findOne(@PathVariable Long id) {
-        Optional<Movie> movie = movieRepository.findById(id);
+        var movie = movieRepository.findById(id);
 
         return movie.<ResponseEntity>map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
@@ -75,20 +73,20 @@ public class MoviesService {
 
     @PostConstruct
     public void initDatabase() {
-        Movie interstellar = Movie.builder()
+        var interstellar = Movie.builder()
                 .director("Christopher Nolan")
                 .releaseDate(LocalDate.of(2014, Month.NOVEMBER, 7))
                 .type(MovieType.SCIFI)
                 .title("Interstellar")
                 .build();
 
-        Movie snowden = Movie.builder()
+        var snowden = Movie.builder()
                 .director("Oliver Stone")
                 .releaseDate(LocalDate.of(2016, Month.SEPTEMBER, 16))
                 .type(MovieType.DRAMA)
                 .title("Snowden")
                 .build();
 
-        movieRepository.saveAll(Arrays.asList(interstellar, snowden));
+        movieRepository.saveAll(List.of(interstellar, snowden));
     }
 }
