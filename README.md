@@ -1,6 +1,6 @@
 # spring-boot-sample
 
-Simple Spring Boot 2.0 app designed for training purpose.
+Simple Spring Boot 2.1 app designed for training purpose.
 
 ## Presentation
 
@@ -10,7 +10,7 @@ Open the `index.html` file in your favorite browser to watch it.
 
 ## Tools required
 
-You need a JDK 10 to build and run this app.
+You need a JDK 11 to build and run this app.
 
 ## Build
 ```
