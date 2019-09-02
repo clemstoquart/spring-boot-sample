@@ -1,7 +1,5 @@
 # spring-boot-sample
 
-[![Build Status](https://travis-ci.org/clemstoquart/spring-boot-sample.svg?branch=master)](https://travis-ci.org/clemstoquart/spring-boot-sample)
-
 Simple Spring Boot 2.0 app designed for training purpose.
 
 ## Presentation
