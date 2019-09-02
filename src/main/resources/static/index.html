@@ -1,36 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Amazing website</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
 
-<div id="app">
+<div id="app" class="container">
 
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">Better VOD</a>
-                <p class="navbar-text">See our amazing content !</p>
-            </div>
-        </div>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Better VOD</a>
+        <span class="navbar-text">See our amazing content !</span>
     </nav>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <h2>Available Movies</h2>
-                <ul class="list-group">
-                    <li class="list-group-item" v-for="movie in movies">
-                        <span class="badge">{{ movie.type }}</span>
-                        <p>Title : {{ movie.title }}</p>
-                        <p>Director : {{ movie.director }}</p>
-                        <p>Release date : {{ movie.releaseDate }}</p>
-                    </li>
-                </ul>
-            </div>
+    <div class="row">
+        <div class="col-md-8">
+            <h1>Available Movies</h1>
+            <ul class="list-group">
+                <li class="list-group-item" v-for="movie in movies">
+                    <span class="badge badge-pill badge-primary">{{ movie.type }}</span>
+                    <p>Title : {{ movie.title }}</p>
+                    <p>Director : {{ movie.director }}</p>
+                    <p>Release date : {{ movie.releaseDate }}</p>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
