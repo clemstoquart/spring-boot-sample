@@ -1,6 +1,6 @@
 plugins {
     id("java")
-    id("org.springframework.boot") version "2.1.7.RELEASE"
+    id("org.springframework.boot") version "2.1.9.RELEASE"
     id("io.spring.dependency-management") version "1.0.8.RELEASE"
 }
 
@@ -17,7 +17,7 @@ repositories {
 
 dependencyManagement {
     imports {
-        mavenBom("org.springframework.cloud:spring-cloud-dependencies:Greenwich.SR2")
+        mavenBom("org.springframework.cloud:spring-cloud-dependencies:Greenwich.SR3")
     }
 }
 
