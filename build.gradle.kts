@@ -13,11 +13,14 @@ java {
 
 repositories {
     mavenCentral()
+    maven {
+        url = uri("https://repo.spring.io/milestone")
+    }
 }
 
 dependencyManagement {
     imports {
-        mavenBom("org.springframework.cloud:spring-cloud-dependencies:Greenwich.SR3")
+        mavenBom("org.springframework.cloud:spring-cloud-dependencies:Hoxton.M3")
     }
 }
 
@@ -26,11 +29,11 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 
+    implementation("org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j")
+
     implementation("com.h2database:h2")
     implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
     implementation("javax.xml.bind:jaxb-api")
-    implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
-    implementation("org.springframework.cloud:spring-cloud-starter-netflix-hystrix")
 
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")

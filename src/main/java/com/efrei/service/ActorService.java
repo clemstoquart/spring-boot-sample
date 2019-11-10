@@ -1,30 +1,34 @@
 package com.efrei.service;
 
+import java.util.List;
+
 import com.efrei.model.Actor;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.cloud.client.circuitbreaker.CircuitBreakerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.Collections;
-import java.util.List;
-
 @Service
+@RequiredArgsConstructor
+@Slf4j
 public class ActorService {
 
-    @HystrixCommand(fallbackMethod = "defaultActors")
+    private final CircuitBreakerFactory circuitBreakerFactory;
+
     public List<Actor> getMovieActors(String movieTitle) {
         RestTemplate restTemplate = new RestTemplate();
 
-        var entity = restTemplate.getForEntity("http://localhost:8081/actors/" + movieTitle, Actor[].class);
-
-        if (entity.getBody() != null) {
-            return List.of(entity.getBody());
-        } else {
-            return Collections.emptyList();
-        }
+        return circuitBreakerFactory.create("getMovieActors").run(
+            () -> (List<Actor>) restTemplate.getForObject("http://localhost:8081/actors/" + movieTitle, List.class),
+            t -> {
+                log.error("getMovieActors call failed", t);
+                return defaultActors();
+            }
+        );
     }
 
-    public List<Actor> defaultActors(String movieTitle) {
+    private List<Actor> defaultActors() {
         return List.of(new Actor("Doe", "John", null));
     }
 
