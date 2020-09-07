@@ -1,7 +1,7 @@
 plugins {
     id("java")
-    id("org.springframework.boot") version "2.2.2.RELEASE"
-    id("io.spring.dependency-management") version "1.0.8.RELEASE"
+    id("org.springframework.boot") version "2.3.3.RELEASE"
+    id("io.spring.dependency-management") version "1.0.10.RELEASE"
 }
 
 version = "0.0.1-SNAPSHOT"
@@ -20,7 +20,7 @@ repositories {
 
 dependencyManagement {
     imports {
-        mavenBom("org.springframework.cloud:spring-cloud-dependencies:Hoxton.RELEASE")
+        mavenBom("org.springframework.cloud:spring-cloud-dependencies:Hoxton.SR8")
     }
 }
 

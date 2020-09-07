@@ -1,6 +1,6 @@
 # spring-boot-sample
 
-Simple Spring Boot 2.2 app designed for training purpose.
+Spring Boot 2.3 app designed for training purpose.
 
 ## Presentation
 
