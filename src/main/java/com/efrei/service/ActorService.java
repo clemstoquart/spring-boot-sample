@@ -6,6 +6,8 @@ import com.efrei.dto.Actor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cloud.client.circuitbreaker.CircuitBreakerFactory;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -17,7 +19,12 @@ public record ActorService(CircuitBreakerFactory circuitBreakerFactory) {
         var restTemplate = new RestTemplate();
 
         return circuitBreakerFactory.create("getMovieActors").run(
-            () -> (List<Actor>) restTemplate.getForObject("http://localhost:8081/actors/" + movieTitle, List.class),
+            () -> restTemplate.exchange(
+                "http://localhost:8081/actors/" + movieTitle,
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<List<Actor>>() {
+                }).getBody(),
             t -> {
                 LOGGER.error("getMovieActors call failed", t);
                 return defaultActors();
