@@ -1,9 +1,10 @@
-package com.efrei.service;
+package com.efrei.endpoint;
 
-import com.efrei.model.Actor;
+import com.efrei.dto.Actor;
 import com.efrei.model.Movie;
 import com.efrei.model.MovieType;
 import com.efrei.repository.MovieRepository;
+import com.efrei.service.ActorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,7 +18,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/movies")
 @RequiredArgsConstructor
-public class MoviesService {
+public class MovieController {
 
     private final MovieRepository movieRepository;
     private final ActorService actorService;

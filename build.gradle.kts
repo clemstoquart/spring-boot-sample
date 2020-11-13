@@ -11,6 +11,10 @@ java {
     targetCompatibility = JavaVersion.VERSION_15
 }
 
+tasks.compileJava {
+    options.compilerArgs.add("--enable-preview")
+}
+
 repositories {
     mavenCentral()
     maven {
