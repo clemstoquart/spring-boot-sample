@@ -1,12 +1,22 @@
 spring:
   application:
-    name: Service films
+    name: movies-service
   datasource:
     username: sa
     password:
   h2:
     console:
       enabled: true
+      settings:
+        web-allow-others: true
+  jackson:
+    default-property-inclusion: non_absent
+    deserialization:
+      adjust_dates_to_context_time_zone: false
+    serialization:
+      fail_on_empty_beans: false
+  jpa:
+    open-in-view: false
 
 management:
   endpoint:

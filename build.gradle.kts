@@ -2,6 +2,7 @@ plugins {
     id("java")
     id("org.springframework.boot") version "2.4.1"
     id("io.spring.dependency-management") version "1.0.10.RELEASE"
+    id("com.google.cloud.tools.jib") version "2.7.0"
 }
 
 version = "0.0.1-SNAPSHOT"
@@ -43,4 +44,17 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+}
+
+jib {
+    from {
+        image = "adoptopenjdk/openjdk15:jre-15.0.1_9-debianslim"
+    }
+    to {
+        image = "spring-boot-sample"
+    }
+    container {
+        jvmFlags = listOf("--enable-preview")
+        ports = listOf("8080")
+    }
 }
