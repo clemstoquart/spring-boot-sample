@@ -1,6 +1,6 @@
 # spring-boot-sample
 
-Spring Boot 2.3 app designed for training purpose.
+Spring Boot 2.4 app designed for training purpose.
 
 ## Presentation
 
@@ -19,9 +19,5 @@ You need a JDK 15 to build and run this app.
 
 ## Run
 ```
-./gradlew bootRun
-```
-Or
-```
-java -jar build/libs/spring-boot-sample-0.0.1-SNAPSHOT.jar
+java --enable-preview -jar build/libs/spring-boot-sample-0.0.1-SNAPSHOT.jar
 ```
