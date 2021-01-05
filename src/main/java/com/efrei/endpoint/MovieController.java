@@ -24,7 +24,7 @@ public class MovieController {
     private final ActorService actorService;
 
     @GetMapping
-    public ResponseEntity findAll() {
+    public ResponseEntity<?> findAll() {
         var movies = movieRepository.findAll();
 
         if (movies.isEmpty()) {
@@ -37,22 +37,22 @@ public class MovieController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity findOne(@PathVariable Long id) {
+    public ResponseEntity<?> findOne(@PathVariable Long id) {
         var movie = movieRepository.findById(id);
 
-        return movie.<ResponseEntity>map(ResponseEntity::ok)
+        return movie.<ResponseEntity<?>>map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @PostMapping
-    public ResponseEntity createMovie(@RequestBody Movie movie) {
+    public ResponseEntity<?> createMovie(@RequestBody Movie movie) {
         movieRepository.save(movie);
 
         return ResponseEntity.noContent().build();
     }
 
     @PutMapping
-    public ResponseEntity updateMovie(@RequestBody Movie movie) {
+    public ResponseEntity<?> updateMovie(@RequestBody Movie movie) {
         movieRepository.save(movie);
 
         return ResponseEntity.noContent().build();
@@ -60,7 +60,7 @@ public class MovieController {
 
     @Transactional
     @DeleteMapping("/{id}")
-    public ResponseEntity deleteMovie(@PathVariable Long id) {
+    public ResponseEntity<?> deleteMovie(@PathVariable Long id) {
         movieRepository.delete(movieRepository.getOne(id));
 
         return ResponseEntity.noContent().build();
