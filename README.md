@@ -2,12 +2,6 @@
 
 Spring Boot 2.4 app designed for training purpose.
 
-## Presentation
-
-Presentation slides are available in the `slides` folder.
-
-Open the `index.html` file in your favorite browser to watch it.
-
 ## Tools required
 
 You need a JDK 15 to build and run this app.
