@@ -1,6 +1,6 @@
 version: "3.9"
 services:
-  fifthregion-service:
+  spring-boot-service:
     image: spring-boot-sample:latest
     ports:
       - 8080:8080
