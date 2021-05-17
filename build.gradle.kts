@@ -1,8 +1,8 @@
 plugins {
-    id("java")
-    id("org.springframework.boot") version "2.4.5"
+    id("org.springframework.boot") version "2.5.0-RC1"
     id("io.spring.dependency-management") version "1.0.11.RELEASE"
-    id("com.google.cloud.tools.jib") version "2.7.1"
+    id("java")
+    id("com.google.cloud.tools.jib") version "3.0.0"
 }
 
 version = "0.0.1-SNAPSHOT"
@@ -45,6 +45,13 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+}
+
+tasks {
+    withType<Test> {
+        useJUnitPlatform()
+        jvmArgs("-Duser.language=en", "--enable-preview")
+    }
 }
 
 jib {

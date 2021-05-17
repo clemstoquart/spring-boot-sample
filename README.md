@@ -1,6 +1,6 @@
 # spring-boot-sample
 
-Spring Boot 2.4 app designed for training purpose.
+Spring Boot 2.5 app designed for training purpose.
 
 ## Tools required
 

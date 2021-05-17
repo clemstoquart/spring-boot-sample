@@ -61,7 +61,7 @@ public class MovieController {
     @Transactional
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteMovie(@PathVariable Long id) {
-        movieRepository.delete(movieRepository.getOne(id));
+        movieRepository.delete(movieRepository.getById(id));
 
         return ResponseEntity.noContent().build();
     }
