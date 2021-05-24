@@ -9,12 +9,12 @@ version = "0.0.1-SNAPSHOT"
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(15))
+        languageVersion.set(JavaLanguageVersion.of(16))
     }
 }
 
 tasks.compileJava {
-    options.compilerArgs.add("--enable-preview")
+    //options.compilerArgs.add("--enable-preview")
 }
 
 repositories {
@@ -38,8 +38,6 @@ dependencies {
     implementation("org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j")
 
     implementation("com.h2database:h2")
-    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
-    implementation("javax.xml.bind:jaxb-api")
 
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")
@@ -50,19 +48,19 @@ dependencies {
 tasks {
     withType<Test> {
         useJUnitPlatform()
-        jvmArgs("-Duser.language=en", "--enable-preview")
+        //jvmArgs("-Duser.language=en", "--enable-preview")
     }
 }
 
 jib {
     from {
-        image = "adoptopenjdk/openjdk15:jre-15.0.1_9-debianslim"
+        image = "adoptopenjdk/openjdk16:jre-16.0.1_9-debianslim"
     }
     to {
         image = "spring-boot-sample"
     }
     container {
-        jvmFlags = listOf("--enable-preview")
+        //jvmFlags = listOf("--enable-preview")
         ports = listOf("8080")
     }
 }
