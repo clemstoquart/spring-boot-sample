@@ -2,7 +2,7 @@ plugins {
     id("org.springframework.boot") version "2.5.2"
     id("io.spring.dependency-management") version "1.0.11.RELEASE"
     id("java")
-    id("com.google.cloud.tools.jib") version "3.1.1"
+    id("com.google.cloud.tools.jib") version "3.1.2"
 }
 
 version = "0.0.1-SNAPSHOT"
