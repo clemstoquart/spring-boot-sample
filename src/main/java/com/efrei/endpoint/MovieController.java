@@ -88,6 +88,20 @@ public class MovieController {
                 .title("Snowden")
                 .build();
 
-        movieRepository.saveAll(List.of(interstellar, snowden));
+        var dune = Movie.builder()
+            .director("Denis Villeneuve")
+            .releaseDate(LocalDate.of(2021, Month.SEPTEMBER, 15))
+            .type(MovieType.SCIFI)
+            .title("Dune")
+            .build();
+
+        var lotr = Movie.builder()
+            .director("Peter Jackson")
+            .releaseDate(LocalDate.of(2003, Month.DECEMBER, 17))
+            .type(MovieType.FANTAISY)
+            .title("The Lord of the Rings: The Return of the King")
+            .build();
+
+        movieRepository.saveAll(List.of(interstellar, snowden, dune, lotr));
     }
 }

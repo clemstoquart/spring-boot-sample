@@ -2,5 +2,5 @@ package com.efrei.model;
 
 public enum MovieType {
 
-    ADVENTURE, DRAMA, SCIFI
+    ADVENTURE, DRAMA, SCIFI, FANTAISY
 }
