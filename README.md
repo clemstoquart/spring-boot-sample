@@ -1,10 +1,10 @@
 # spring-boot-sample
 
-Spring Boot 2.5 app designed for training purpose.
+Spring Boot app designed for training purpose.
 
 ## Tools required
 
-You need a JDK 15 to build and run this app.
+You need a JDK 17 to build and run this app.
 
 ## Build
 ```
@@ -13,5 +13,11 @@ You need a JDK 15 to build and run this app.
 
 ## Run
 ```
-java --enable-preview -jar build/libs/spring-boot-sample-0.0.1-SNAPSHOT.jar
+java -jar build/libs/spring-boot-sample-0.0.1-SNAPSHOT.jar
+```
+
+## Docker image
+
+```
+./gradlew jibDockerBuild
 ```

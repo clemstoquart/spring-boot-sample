@@ -48,13 +48,13 @@ dependencies {
 tasks {
     withType<Test> {
         useJUnitPlatform()
-        //jvmArgs("-Duser.language=en", "--enable-preview")
+        jvmArgs("-Duser.language=en")
     }
 }
 
 jib {
     from {
-        image = "adoptopenjdk/openjdk16:jre-16.0.1_9-debianslim"
+        image = "eclipse-temurin:17_35-jdk-focal"
     }
     to {
         image = "spring-boot-sample"
