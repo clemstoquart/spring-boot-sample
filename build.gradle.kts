@@ -1,5 +1,5 @@
 plugins {
-    id("org.springframework.boot") version "2.7.5"
+    id("org.springframework.boot") version "3.0.0-RC1"
     id("io.spring.dependency-management") version "1.1.0"
     id("java")
     id("com.google.cloud.tools.jib") version "3.3.0"
@@ -26,7 +26,7 @@ repositories {
 
 dependencyManagement {
     imports {
-        mavenBom("org.springframework.cloud:spring-cloud-dependencies:2021.0.4")
+        mavenBom("org.springframework.cloud:spring-cloud-dependencies:2022.0.0-M5")
     }
 }
 

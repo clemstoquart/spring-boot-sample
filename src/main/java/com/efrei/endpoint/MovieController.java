@@ -5,12 +5,12 @@ import com.efrei.model.Movie;
 import com.efrei.model.MovieType;
 import com.efrei.repository.MovieRepository;
 import com.efrei.service.ActorService;
+import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.PostConstruct;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.List;
@@ -61,7 +61,7 @@ public class MovieController {
     @Transactional
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteMovie(@PathVariable Long id) {
-        movieRepository.delete(movieRepository.getById(id));
+        movieRepository.delete(movieRepository.findById(id).orElseThrow());
 
         return ResponseEntity.noContent().build();
     }

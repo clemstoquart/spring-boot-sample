@@ -3,6 +3,7 @@ package com.efrei.service;
 import java.util.List;
 
 import com.efrei.dto.Actor;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cloud.client.circuitbreaker.CircuitBreakerFactory;
@@ -12,8 +13,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
-public record ActorService(CircuitBreakerFactory circuitBreakerFactory) {
+@RequiredArgsConstructor
+public class ActorService {
     private static final Logger LOGGER = LoggerFactory.getLogger(ActorService.class);
+
+    private final CircuitBreakerFactory circuitBreakerFactory;
 
     public List<Actor> getMovieActors(String movieTitle) {
         var restTemplate = new RestTemplate();
