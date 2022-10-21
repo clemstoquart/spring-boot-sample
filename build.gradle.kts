@@ -1,6 +1,6 @@
 plugins {
-    id("org.springframework.boot") version "2.7.4"
-    id("io.spring.dependency-management") version "1.0.14.RELEASE"
+    id("org.springframework.boot") version "2.7.5"
+    id("io.spring.dependency-management") version "1.1.0"
     id("java")
     id("com.google.cloud.tools.jib") version "3.3.0"
 }
@@ -54,7 +54,7 @@ tasks {
 
 jib {
     from {
-        image = "eclipse-temurin:17_35-jdk-focal"
+        image = "eclipse-temurin:17.0.4.1_1-jre"
     }
     to {
         image = "spring-boot-sample"
