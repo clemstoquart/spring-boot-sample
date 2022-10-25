@@ -3,6 +3,7 @@ plugins {
     id("io.spring.dependency-management") version "1.1.0"
     id("java")
     id("com.google.cloud.tools.jib") version "3.3.0"
+    id("org.graalvm.buildtools.native") version "0.9.16"
 }
 
 version = "0.0.1-SNAPSHOT"
