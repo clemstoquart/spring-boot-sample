@@ -4,7 +4,7 @@ Spring Boot app designed for training purpose.
 
 ## Tools required
 
-You need a JDK 17 to build and run this app.
+You need a JDK 19 to build and run this app.
 
 ## Build
 ```
