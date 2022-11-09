@@ -9,7 +9,7 @@ version = "0.0.1-SNAPSHOT"
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(19))
+        languageVersion.set(JavaLanguageVersion.of(17))
     }
 }
 
@@ -37,7 +37,7 @@ dependencies {
 
     implementation("org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j")
 
-    implementation("com.h2database:h2")
+    implementation("org.postgresql:postgresql")
 
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")

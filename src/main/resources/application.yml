@@ -4,11 +4,11 @@ spring:
   datasource:
     username: sa
     password:
-  h2:
-    console:
-      enabled: true
-      settings:
-        web-allow-others: true
+#  h2:
+#    console:
+#      enabled: true
+#      settings:
+#        web-allow-others: true
   jackson:
     default-property-inclusion: non_absent
     deserialization:
@@ -17,6 +17,8 @@ spring:
       fail_on_empty_beans: false
   jpa:
     open-in-view: false
+    hibernate:
+      ddl-auto: create
 
 management:
   endpoint:
