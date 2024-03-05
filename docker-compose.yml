@@ -1,4 +1,3 @@
-version: "3.9"
 services:
   spring-boot-service:
     image: spring-boot-sample:latest
