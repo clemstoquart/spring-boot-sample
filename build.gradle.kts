@@ -56,7 +56,7 @@ tasks {
 
 jib {
     from {
-        image = "eclipse-temurin:21.0.1_12-jre"
+        image = "eclipse-temurin:21.0.4_7-jre"
     }
     to {
         image = "spring-boot-sample"
