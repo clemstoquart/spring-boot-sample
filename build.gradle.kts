@@ -1,5 +1,5 @@
 plugins {
-    id("org.springframework.boot") version "4.0.0"
+    id("org.springframework.boot") version "4.0.1"
     id("io.spring.dependency-management") version "1.1.7"
     id("java")
     id("com.google.cloud.tools.jib") version "3.5.2"
@@ -35,6 +35,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-webmvc")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.springframework.boot:spring-boot-starter-restclient")
 
     implementation("org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j")
 
